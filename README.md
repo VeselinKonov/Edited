@@ -2,23 +2,21 @@ To run the application please follow the instructions:
 
 There are two options to run this applications based on OS.
 
-First of all create venv and install requirements for the app.
+First of all create venv and install requirements for the app. 
 
-```
-python3 -m venv /path/to/new/virtual/environment
-```
-```
-pip install -r requirements.txt
-```
+Create new venv and activate it. `python3 -m venv <name_of_venv>` `source <venv_name>/bin/activate` 
+
+Run `pip install -r requirement.txt`  
 
 1. First options (Linux). Install chromedriver:
- a) Debian/Ubuntu
+   
+  a) Debian/Ubuntu
 ```
 sudo dnf install chromedriver
 ```
-b) Fedora/RedHat
+  b) Fedora/RedHat
 ```
-sudo apt install chromedriver
+sudo apt-get install chromium-chromedriver
 ```
 
 2. Second option. Use it via Docker:
@@ -26,5 +24,14 @@ sudo apt install chromedriver
 docker run -d -p 4444:4444 selenium/standalone-chrome
 ```
 
+Finally to run the scrapy spider:
+Navigate to dir `edited`
+
+then run: 
+
+```
+scrapy crawl marksandspencer -o data.json
+```
+where `data.json` is the name of the file for the output
 
 
